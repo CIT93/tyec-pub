@@ -4,38 +4,38 @@ const showOnPage = function(text) {
     let outputDiv = document.getElementById('output')
     outputDiv.append(newParagraph)
 }
-// If I take my meds at six, I am able to have breakfast and walk my dog and shower
-// If I take my meds after six, I need to have a morning snack and shower at night
-// If I don't have time to walk my dog, I need to get my dad to and workout in the evening
+// Changing variables
+// If it is 70 or below in the mornings I'll take my dog out
+// If I wake up at 6 AM, I'll take my dog out for a walk
+// If I wake up later than 7 AM, I need to ask my dad to walk my dog
 
-showOnPage('<b>Alarm is Set for 6 AM</b>')
+showOnPage('Can I walk the dog today?')
+
 // Global Variables
-let wakeUp = 7
-let morningTasks = 30
-let takeMeds = false
-let haveBreakfast = false
+let temp = 60
+let currentTime = 5
 let walkDog = false
-let haveSnack = false
-let morningShower = false
-let eveningShower = false
-let eveningWorkout = false
 
-if (wakeUp <= 6 && morningTasks) {
-    takeMeds = true
-    morningShower = true
+showOnPage('Wake up Time ---> ' + currentTime)
+showOnPage('Current Temperature ---> ' + temp)
+
+if (currentTime <= 6 && temp <= 70) {
     walkDog = true
-    showOnPage('Eat Breakfast.')
-    showOnPage('Walk Dog')
-    showOnPage('Take Shower')
+    showOnPage('Walk the Dog!')
 }
-else if (wakeUp >= 6 && morningTasks) {
-    haveSnack = true
+else if (currentTime >= 6 || temp >= 70) {
     walkDog = false
-    eveningShower = true
-    showOnPage('Have morning snack')
-    showOnPage('Have evening shower')
+    showOnPage('Ask dad to walk the dog')
 }
 else {
-    showOnPage('Wake up & Take your meds!')
+    showOnPage('Play fetch with the dog in the backyard')
 }
+
+// She always is a good girl, but just wanted to add this cause I love her.
+
+let goodBehavior = true
+if (goodBehavior) {
+    showOnPage('Give her lots of treats')
+}
+
 
